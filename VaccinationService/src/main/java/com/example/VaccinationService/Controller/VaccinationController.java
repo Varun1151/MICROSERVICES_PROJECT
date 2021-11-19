@@ -32,13 +32,19 @@ public class VaccinationController {
 	
 	@PostMapping(path ="/add")
 	public ResponseEntity<VaccinationCenter> addCitizen(@RequestBody VaccinationCenter vaccinationCenter) {
-		
 		VaccinationCenter vaccinationCenterAdded = centerRepo.save(vaccinationCenter);
 		return new ResponseEntity<>(vaccinationCenterAdded, HttpStatus.OK);
 	}
 	
+	@GetMapping(path="/all")
+	public ResponseEntity<List<VaccinationCenter>> getAllVaccinationCenters(){
+		List<VaccinationCenter> centers = centerRepo.findAll();
+		return new ResponseEntity<>(centers, HttpStatus.OK);
+	}
+
+
 	@GetMapping(path = "/id/{id}")
-	public ResponseEntity<RequiredResponse> getAllDadaBasedonCenterId(@PathVariable Integer id){
+	public ResponseEntity<RequiredResponse> getAllDataBasedonCenterId(@PathVariable Integer id){
 		RequiredResponse requiredResponse =  new RequiredResponse();
 		//1st get vaccination center detail
 		VaccinationCenter center  = centerRepo.findById(id).get();
