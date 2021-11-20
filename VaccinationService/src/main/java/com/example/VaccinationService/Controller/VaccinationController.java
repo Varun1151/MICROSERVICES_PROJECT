@@ -52,7 +52,7 @@ public class VaccinationController {
 		
 		// then get all citizen registerd to vaccination center
 		
-		java.util.List<Citizen> listOfCitizens = restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/id/"+id, List.class);
+		java.util.List<Citizen> listOfCitizens = restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/vacc_id/"+id, List.class);
 		requiredResponse.setCitizens(listOfCitizens);
 		return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.OK);
 	}

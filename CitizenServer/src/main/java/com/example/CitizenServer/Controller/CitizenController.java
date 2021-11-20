@@ -27,6 +27,12 @@ public class CitizenController {
 		Citizen citizen = repo.findById(id).orElse(null);
 		return new ResponseEntity<>(citizen, HttpStatus.OK);
 	}
+	@RequestMapping(path='/vacc_id/{id}')
+	public ResponseEntity<java.util.List<Citizen>> getByCenterId(@PathVariable Integer id) {
+		
+		List<Citizen> listCitizen = repo.findByVaccinationCenterId(id);
+		return new ResponseEntity<>(listCitizen, HttpStatus.OK);
+	}
 	
 	@PostMapping(path ="/add")
 	public ResponseEntity<Citizen> addCitizen(@RequestBody Citizen newCitizen) {
