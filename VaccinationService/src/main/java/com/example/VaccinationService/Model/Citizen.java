@@ -1,4 +1,4 @@
-package com.example.VaccinationCenter.Model;
+package com.example.VaccinationService.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

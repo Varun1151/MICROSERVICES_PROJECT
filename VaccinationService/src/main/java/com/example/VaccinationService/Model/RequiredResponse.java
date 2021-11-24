@@ -1,8 +1,8 @@
-package com.example.VaccinationCenter.Model;
+package com.example.VaccinationService.Model;
 
 import java.util.List;
 
-import com.example.VaccinationCenter.Entity.VaccinationCenter;
+import com.example.VaccinationService.Entity.VaccinationCenter;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
