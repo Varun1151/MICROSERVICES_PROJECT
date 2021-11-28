@@ -1,4 +1,4 @@
-package com.example.VaccinationCenter.Entity;
+package com.example.VaccinationService.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.example.VaccinationCenter.Controller;
+package com.example.VaccinationService.Controller;
 
 import java.util.List;
 
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.VaccinationCenter.Entity.VaccinationCenter;
-import com.example.VaccinationCenter.Model.Citizen;
-import com.example.VaccinationCenter.Model.RequiredResponse;
-import com.example.VaccinationCenter.repositories.VaccinationRepo;
+import com.example.VaccinationService.Entity.VaccinationCenter;
+import com.example.VaccinationService.Model.Citizen;
+import com.example.VaccinationService.Model.RequiredResponse;
+import com.example.VaccinationService.repositories.VaccinationRepo;
 
 
 

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 import com.example.CitizenServer.Entity.Citizen;
 import com.example.CitizenServer.repositories.CitizenRepo;
 
@@ -27,7 +27,7 @@ public class CitizenController {
 		Citizen citizen = repo.findById(id).orElse(null);
 		return new ResponseEntity<>(citizen, HttpStatus.OK);
 	}
-	@RequestMapping(path='/vacc_id/{id}')
+	@RequestMapping(path="/vacc_id/{id}")
 	public ResponseEntity<java.util.List<Citizen>> getByCenterId(@PathVariable Integer id) {
 		
 		List<Citizen> listCitizen = repo.findByVaccinationCenterId(id);
@@ -40,4 +40,9 @@ public class CitizenController {
 		Citizen citizen = repo.save(newCitizen);
 		return new ResponseEntity<>(citizen, HttpStatus.OK);
 	}	
+	@DeleteMapping(path="/delete/{id}")
+	public String deleteCitizen(@PathVariable Integer id){
+		repo.deleteById(id);
+		return "Citizen with id = "+id+" deleted";
+	}
 }
